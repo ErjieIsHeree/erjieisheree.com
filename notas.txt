@@ -1,0 +1,5 @@
+TODO:
+
+-Editar conexion con supabase (lib/supabase/server.ts)
+
+-ThemeProvider (etiqueta html para claro oscuro?)
