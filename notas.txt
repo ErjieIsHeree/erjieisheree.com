@@ -1,5 +1,6 @@
 TODO:
 
--Editar conexion con supabase (lib/supabase/server.ts)
+-Crear las partes dinámicas
+-Ver xq no cargan las subpáginas
 
 -ThemeProvider (etiqueta html para claro oscuro?)
