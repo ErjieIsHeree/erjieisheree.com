@@ -19,7 +19,7 @@ export default function RootLayout({
         <header>
           <div>
             <Link href="/" >
-              <Image src="/socials/x_logo.png" alt="This site logo" width={35} height={35} />
+              <Image src="/img/others/temp-img.jpg" alt="This site logo" width={35} height={35} />
               <p>erjieisheree.com</p>
             </Link>
           </div>
@@ -32,14 +32,14 @@ export default function RootLayout({
             </button>
           </div>
         </header>
-
+        <hr />
         <main>{children}</main>
-        
+        <hr />
         <footer>
           <div>
             <Link href="/">
             <div>
-              <Image src="/socials/x_logo.png" alt="This site logo" width={35} height={35} />
+              <Image src="/img/others/temp-img.jpg" alt="This site logo" width={35} height={35} />
               <p>erjieisheree.com</p>
             </div>
           </Link>
@@ -47,13 +47,13 @@ export default function RootLayout({
           </div>
           <div>
             <a href="https://github.com/ErjieIsHeree">
-              <Image src="/socials/github_logo.png" alt="Github logo" width={35} height={35} />
+              <Image src="/img/socials/github-logo.png" alt="Github logo" width={35} height={35} />
             </a>
             <a href="https://linkedin.com/in/erjie-xia-5b50b72a6">
-              <Image src="/socials/linkedin_logo.png" alt="Linkedin logo" width={35} height={35} />
+              <Image src="/img/socials/linkedin-logo.png" alt="Linkedin logo" width={35} height={35} />
             </a>
             <a href="https://x.com/home">
-              <Image src="/socials/x_logo.png" alt="X logo" width={35} height={35} />
+              <Image src="/img/socials/x-logo.png" alt="X logo" width={35} height={35} />
             </a>
           </div>
           <div>
