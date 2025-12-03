@@ -14,6 +14,8 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import MenuIcon from "@mui/icons-material/Menu";
 
+import ThemeToggleButton from "./ThemeToggleButton";
+
 export default function Header() {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
@@ -74,6 +76,8 @@ export default function Header() {
           </MenuItem>
           <MenuItem onClick={closeMenu}>Menu</MenuItem>
         </Menu>
+
+        <ThemeToggleButton />
 
       </Toolbar>
     </AppBar>

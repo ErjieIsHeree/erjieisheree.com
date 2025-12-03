@@ -2,7 +2,7 @@ import "./globals.css";
 import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
-import MUIProvider from "./MUIProvider";
+import ThemeRegistry from "./ThemeRegistry";
 import Header from "@/components/Header";
 
 export const metadata: Metadata = {
@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <MUIProvider>
+        <ThemeRegistry>
           <Header />
           {/*<header>
             <div >
@@ -108,7 +108,7 @@ export default function RootLayout({
               </p>
             </div>
           </footer>
-        </MUIProvider>
+        </ThemeRegistry>
       </body>
     </html>
   );
