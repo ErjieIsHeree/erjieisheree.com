@@ -14,11 +14,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <body>
-        <ThemeRegistry>
-          <Header />
-          <main>{children}</main>
-          
-        </ThemeRegistry>
+        <Header />
+        <main>{children}</main>
       </body>
     </html>
   );
