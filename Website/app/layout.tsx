@@ -1,7 +1,10 @@
 import "./globals.css";
 
 import { Metadata } from "next";
+import { ThemeProvider } from "@mui/material/styles";
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 
+import { AppTheme } from "@theme/themes"
 import Header from "@ui/Header";
 import Footer from "@ui/Footer";
 
@@ -14,8 +17,13 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <body>
-        <Header />
-        <main>{children}</main>
+        <AppRouterCacheProvider>
+          <ThemeProvider theme={AppTheme}>
+            <Header />
+            <main>{children}</main>
+            <Footer />
+          </ThemeProvider>
+        </AppRouterCacheProvider>
       </body>
     </html>
   );

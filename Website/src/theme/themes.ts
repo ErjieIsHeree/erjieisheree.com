@@ -1,8 +1,8 @@
+"use client";
 
-import { createTheme } from '@mui/material/styles';
+import { createTheme } from "@mui/material/styles";
 
-export default function CreateTheme() {
-  const appTheme = createTheme({
+export const AppTheme = createTheme({
     palette: {
       primary: { main: "#142890", light: "#1F3FE0", dark: "#09123F", contrastText: "#ffffff" },
       secondary: { main: "#422F00", light: "#A37500", dark: "#1A1200", contrastText: "#ffffff" },
@@ -28,10 +28,6 @@ export default function CreateTheme() {
       h6: { }
     },
     shape: {
-      borderRadius: 0
+      borderRadius: 10
     }
-  });
-  return(
-    appTheme
-  );
-}
+});
