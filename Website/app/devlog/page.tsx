@@ -1,7 +1,8 @@
+import Link from "next/link";
 import { createClient } from '@/lib/supabase/server';
-import { Grid, Typography, Link } from "@mui/material";
+import { Grid, Typography } from "@mui/material"
 
-async function getBlogPosts() {
+async function getTracePosts() {
   const supabase = await createClient();
   const { data: postArray, error } = await supabase
     .from("blog")
@@ -16,18 +17,18 @@ async function getBlogPosts() {
   return postArray || [];
 }
 
-export default async function PersonalBlog() {
-  const postArray = await getBlogPosts();
+export default async function WorkTrace() {
+  const postArray = await getTracePosts();
 
   return (
-    <Grid container spacing={5} sx={{ p: 10 }} >
+    <Grid container spacing={5} sx={{  p: 10 }} >
       <Grid size={12}>
         <Grid container spacing={3}>
           <Grid size={12}>
-            <Typography variant="h1" color="text.primary">My Blog</Typography>
+            <Typography variant="h1" color="text.primary">DevLog</Typography>
           </Grid>
           <Grid size={5}>
-            <Typography variant="body1" color="text.primary">Hi hi! Here I&#39;ll upload all kind of contents of my daily life. Right now my two main hobbies are skiing and singing. We will see our progress through the years and the posts.</Typography>
+            <Typography variant="body1" color="text.primary">Welcome to mi studies/works blocs notes. Here you&#39;ll find everything about my background as an IT professional.</Typography>
           </Grid>
         </Grid>
       </Grid>

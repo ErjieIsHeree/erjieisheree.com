@@ -1,16 +1,16 @@
 "use client";
 
-import NextLink from "next/link";
-import Image from "next/image";
+import { Typography, AppBar, Toolbar, Box, Button, Link } from "@mui/material";
 
-import { Typography, AppBar, Toolbar, Box, Button } from "@mui/material";
+import Logo from "@ui/Logo";
 
 export default function Header() {
   return (
     <AppBar
+      component="header"
       position="sticky"
       sx={{
-        backgroundColor: "background.default",
+        backgroundColor: "background.paper",
         backdropFilter: "blur(10px)",
         WebkitBackdropFilter: "blur(10px)",
         boxShadow: "initial"
@@ -18,76 +18,41 @@ export default function Header() {
     >
       <Toolbar
         sx={{
-          display: "grid",
-          gridTemplateColumns: "1fr auto"
+          display: "inline-flex",
+          justifyContent: "space-between",
+          p: 0.5
         }}
       >
-        <Logo />
+        <Logo logoHeight={75}/>
         <Box
           sx={{
             display: "flex",
             alignItems: "center",
-            gap: 2
+            gap: 4
           }}
         >
-          <ProjectsBtn />
-          <MenuBtn />
+          <Button href="/devlog" variant="outlined" color="primary">
+            <Typography variant="button" color="text.primary">
+              DevLog
+            </Typography>
+          </Button>
+          <Button href="/projects" variant="outlined" color="primary">
+            <Typography variant="button" color="text.primary">
+              Projects
+            </Typography>
+          </Button>
+          <Button href="/blog" variant="outlined" color="primary">
+            <Typography variant="button" color="text.primary">
+              My blog
+            </Typography>
+          </Button>
+          <Button href="/about" variant="contained" color="primary">
+            <Typography variant="button" color="primary.contrastText">
+              About me
+            </Typography>
+          </Button>
         </Box>
       </Toolbar>
     </AppBar>
-  );
-}
-
-function Logo() {
-  return(
-    <Box
-      component={NextLink}
-      href="/"
-      sx={{
-        display: "inline-flex",
-        alignItems: "center",
-        gap: 1,
-        borderColor: "#000",
-        border: 2
-      }}
-    >
-      <Box
-        sx={{
-          width: 100,
-          height: 50,
-          position: "relative"
-        }}>
-        <Image src="/img/logo.png" alt="Website's Logo" fill />
-      </Box>
-      <Typography
-        sx={{
-          display: "inline"
-        }}
-        variant="h4"
-        color="inherit"
-      >
-        erjieisheree.com
-      </Typography>
-    </Box>
-  );
-}
-
-function ProjectsBtn() {
-  return(
-    <Box component="a" href="https://github.com/ErjieIsHeree?tab=projects">
-      <Typography variant="h6" color="inherit" >
-        Projects
-      </Typography>
-    </Box>
-  );
-}
-
-function MenuBtn() {
-  return(
-    <Button variant="contained">
-      <Typography variant="button">
-        Menu
-      </Typography>
-    </Button>
   );
 }

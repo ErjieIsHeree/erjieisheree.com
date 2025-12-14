@@ -1,7 +1,8 @@
 @import "tailwindcss";
 
 * {
-  border-color: red;
+  border: 1;
+  border-color: black;
 }
 
 :root {
