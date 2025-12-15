@@ -38,7 +38,7 @@ export default function Footer() {
               <Link component="a" href="https://linkedin.com/in/erjie-xia-5b50b72a6">
                 <Image src="/img/social/linkedin-logo.png" alt="LinkedIn link" width={35} height={35}/>
               </Link>
-              <Link component="a" href="https://x.com/home">
+              <Link component="a" href="https://x.com/ErjieX22730">
                 <Image src="/img/social/x-logo.png" alt="Twitter/X link" width={35} height={35}/>
               </Link>
             </Grid>
