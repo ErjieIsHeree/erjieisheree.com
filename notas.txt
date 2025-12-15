@@ -1,6 +1,11 @@
 TODO:
 
--Crear las partes dinámicas
--Ver xq no cargan las subpáginas
+MAIN
+-Crear interfaz de administrador (crear/eliminar posts)
+-Actualizar interfaz (img, logo, estilos...)
+-Lanzar la pagina web
 
--ThemeProvider (etiqueta html para claro oscuro?)
+Secondary
+-Dark mode
+-NextLinks (todos los componentes Link del proyecto usan el de MUI, no el de Next.)
+-Añadir navegador por página

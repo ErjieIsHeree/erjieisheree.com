@@ -1,6 +1,4 @@
-"use client";
-
-import { Typography, AppBar, Toolbar, Box, Button, Link } from "@mui/material";
+import { Typography, AppBar, Toolbar, Box, Button } from "@mui/material";
 
 import Logo from "@ui/Logo";
 
@@ -31,6 +29,11 @@ export default function Header() {
             gap: 4
           }}
         >
+          <Button href="/" variant="outlined" color="primary">
+            <Typography variant="button" color="text.primary">
+              Home
+            </Typography>
+          </Button>
           <Button href="/devlog" variant="outlined" color="primary">
             <Typography variant="button" color="text.primary">
               DevLog

@@ -4,7 +4,7 @@ import { Grid, Typography, Link, Divider, Box } from "@mui/material"
 async function getTracePosts() {
   const supabase = await createClient();
   const { data: postArray, error } = await supabase
-    .from("trace")
+    .from("devlog")
     .select("id, title, subtitle, updated_at, created_at")
     .order("created_at", { ascending: false });
 
@@ -41,7 +41,7 @@ function renderPost(
 ) {
   return(
     <Grid size={12} key={post.id}>
-      <Link href={"/"} display={"flex"} justifyContent={"space-between"} underline='none'>
+      <Link href={`/devlog/${post.id}`} display={"flex"} justifyContent={"space-between"} underline='none'>
         <Typography variant="body1" color="textPrimary" fontWeight={"bold"}>{post.title}</Typography>
         <Typography variant="body1" color="textPrimary" sx={{ px: 30 }}>{new Date(post.created_at).getDate()}/{new Date(post.created_at).getMonth()}/{new Date(post.created_at).getFullYear()}</Typography>
       </Link>

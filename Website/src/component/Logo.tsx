@@ -1,9 +1,6 @@
-"use client";
-
-import NextLink from "next/link";
 import Image from "next/image";
 
-import { Box } from "@mui/material";
+import { Link } from "@mui/material";
 
 type LogoProps = {
   logoHeight: number;
@@ -11,8 +8,7 @@ type LogoProps = {
 
 export default function Logo({ logoHeight }: LogoProps) {
   return(
-    <Box
-      component={NextLink}
+    <Link
       href="/"
       sx={{
         display: "inline-block",
@@ -22,6 +18,6 @@ export default function Logo({ logoHeight }: LogoProps) {
       }}
     >
       <Image src="/img/logo.png" alt="Logo" fill style={{ objectFit: "contain" }}/>
-    </Box>
+    </Link>
   );
 }
