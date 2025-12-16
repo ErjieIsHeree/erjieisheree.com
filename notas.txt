@@ -1,11 +1,11 @@
 TODO:
 
 MAIN
--Crear interfaz de administrador (crear/eliminar posts)
 -Actualizar interfaz (img, logo, estilos...)
 -Lanzar la pagina web
 
 Secondary
+-Crear interfaz de administrador (crear/eliminar posts)
 -Dark mode
 -NextLinks (todos los componentes Link del proyecto usan el de MUI, no el de Next.)
 -Añadir navegador por página
