@@ -1,7 +1,8 @@
 "use server";
 
+import { redirect } from 'next/navigation'
 import { SignupFormSchema, FormState } from "@/app/lib/auth/schema";
-import { updateSession } from "../lib/auth/session";
+import { createSession } from "../lib/auth/session";
 
 export async function login(state: FormState, formData: FormData) {
   // Validate form fields
@@ -18,7 +19,8 @@ export async function login(state: FormState, formData: FormData) {
   }
 
   // Validar usuario y crear token de sesion
+  const user = "1"
 
-  await updateSession();
+  await createSession(user);
   redirect("/admin");
 }
