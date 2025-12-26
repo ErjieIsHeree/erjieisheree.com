@@ -1,6 +1,6 @@
 "use server";
 
-import { SignupFormSchema, FormState } from "@/app/lib/auth/validation";
+import { SignupFormSchema, FormState } from "@/app/lib/auth/schema";
 import { updateSession } from "../lib/auth/session";
 
 export async function login(state: FormState, formData: FormData) {
@@ -18,8 +18,7 @@ export async function login(state: FormState, formData: FormData) {
   }
 
   // Validar usuario y crear token de sesion
-  const user;
 
-  await updateSession(user);
+  await updateSession();
   redirect("/admin");
 }

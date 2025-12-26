@@ -1,4 +1,10 @@
-import * as z from "zod";
+import z from "zod";
+
+export const SessionPayloadSchema = z.object({
+  userId: z.string(),
+});
+
+export type SessionPayload = z.infer<typeof SessionPayloadSchema>;
 
 export const SignupFormSchema = z.object({
   email: z.email({ error: "Please enter a valid email." }).trim(),
