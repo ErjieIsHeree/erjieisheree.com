@@ -1,6 +1,5 @@
-import Image from "next/image";
-import { Grid, Typography, Link, Card, CardContent, Divider } from "@mui/material";
-import { createClient } from '@/lib/supabase/server';
+import { Grid, Typography, Card, CardContent, Divider, CardActionArea } from "@mui/material";
+import { createClient } from '@lib/supabase/server';
 
 async function getProjects() {
   const supabase = await createClient();
@@ -11,45 +10,55 @@ async function getProjects() {
   
     if (error) {
       console.error("Error fetching posts:", error);
-      return [];
+      return [] ;
     }
 
     return projectArray || [];
+}
+
+function renderProject(project: {
+  id: number;
+  title: string;
+  subtitle: string;
+  link: string;
+  updated_at: number;
+}) {
+  return(
+    <Grid size={4} key={project.id}>
+      <Card variant="elevation"
+        sx={{
+          bgcolor: 'background.paper',
+          p: 1,
+          "&:hover": { filter: 'brightness(0.8)' }
+        }}>
+        <CardActionArea component={"a"} href={project.link} >
+          <CardContent>
+            <Typography variant="caption" color="textPrimary">Last update: {new Date(project.updated_at).toLocaleDateString()}</Typography>
+            <Typography variant="h3" color="textPrimary" fontSize={30} fontWeight={"bold"}>{project.title}</Typography>
+            <Typography variant="subtitle1" color="textPrimary">{project.subtitle}</Typography>
+          </CardContent>
+        </CardActionArea>
+      </Card>
+    </Grid>
+  );
 }
 
 export default async function Page() {
   const projectArray = await getProjects();
 
   return (
-    <Grid container spacing={5} sx={{ px: 10, py: 5 }} >
-      <Grid size={12}>
-        <Grid container spacing={3}>
-          <Grid size={12}>
-            <Typography variant="h1" color="text.primary">Projects</Typography>
-          </Grid>
-          <Grid size={12}>
-            <Typography variant="body1" color="text.primary">You found the portfolio page!<br />All the projects here have at least 50% of participation from me.</Typography>
-          </Grid>
-          <Grid size={12}><Divider /></Grid>
+    <Grid container spacing={4}>
+      <Grid container spacing={3} size={12}>
+        <Grid size={12}>
+          <Typography variant="h1" color="text.primary">Projects</Typography>
         </Grid>
+        <Grid size={12}>
+          <Typography variant="body1" color="text.primary">You found the portfolio page!<br />All the projects here have at least 50% of participation from me.</Typography>
+        </Grid>
+        <Grid size={12}><Divider /></Grid>
       </Grid>
-      <Grid size={12}>
-        <Grid container spacing={5}>
-          {projectArray.map(project => (
-            <Grid size={4} key={project.id}>
-              <Card variant="elevation">
-                <CardContent>
-                  <Link component={"a"} href={project.link} underline="none">
-                    <Typography variant="caption" color="textPrimary">Last update: {new Date(project.updated_at).toLocaleDateString()}</Typography>
-                    <Typography variant="h2" color="textPrimary">{project.title}</Typography>
-                    <Typography variant="subtitle1" color="textPrimary">{project.subtitle}</Typography>
-                  </Link>
-                  
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
+      <Grid container spacing={5} size={12}>
+        {projectArray.map(renderProject)}
       </Grid>
     </Grid>
   );

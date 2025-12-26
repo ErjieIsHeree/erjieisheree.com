@@ -14,10 +14,10 @@ export default function Logo({ logoHeight }: LogoProps) {
         display: "inline-block",
         height: logoHeight,
         aspectRatio: "1 / 1",
-        position: "relative",
+        position: "relative"
       }}
     >
-      <Image src="/img/logo.png" alt="Logo" fill style={{ objectFit: "contain" }}/>
+      <Image src="/img/new-logo.png" alt="logo" fill style={{ objectFit: "contain" }}/>
     </Link>
   );
 }

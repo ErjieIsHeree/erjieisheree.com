@@ -1,11 +1,8 @@
 import "../globals.css";
 
 import { Metadata } from "next";
-import { ThemeProvider } from "@mui/material/styles";
-import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
-import { Box } from "@mui/material";
+import { Grid } from "@mui/material";
 
-import { AppTheme } from "@theme/themes"
 import Header from "@ui/Header";
 import Footer from "@ui/Footer";
 
@@ -16,18 +13,25 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode; }>) {
   return (
-    <html lang="en">
-      <body>
-        <AppRouterCacheProvider>
-          <ThemeProvider theme={AppTheme}>
-            <Header />
-            <Box component="main" sx={{ minHeight: "100vh", bgcolor: "background.default" }}>
-              {children}
-            </Box>
-            <Footer />
-          </ThemeProvider>
-        </AppRouterCacheProvider>
-      </body>
-    </html>
+    <Grid container component="body" spacing={"3em"}
+      sx={{
+        bgcolor: "background.default",
+        justifyContent: "center"
+      }}
+    >
+      <Header />
+      <Grid size={12} component="main"
+        sx={{
+          minHeight: "100vh",
+          maxWidth: "100em",
+          mx: 10,
+          my: 5
+        }}>
+        {children}
+      </Grid>
+      <Grid size={12}>
+        <Footer />
+      </Grid>
+    </Grid>
   );
 }

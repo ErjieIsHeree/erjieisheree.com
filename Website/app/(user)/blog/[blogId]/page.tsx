@@ -2,7 +2,7 @@
 import { Box } from "@mui/material";
 
 import Markdown from "@ui/Markdown";
-import { createClient } from '@/lib/supabase/server';
+import { createClient } from '@/app/lib/supabase/server';
 
 async function getPost(blogId: string) {
   const supabase = await createClient();
@@ -19,9 +19,9 @@ async function getPost(blogId: string) {
   return post[0];
 }
 
-export default async function Page({ params, }: {
-  params: Promise<{ blogId: string }>
-}) {
+export default async function Page(
+  { params }: { params: Promise<{ blogId: string }> }
+) {
   const blogId = (await params).blogId;
   const post = await getPost(blogId);
 
