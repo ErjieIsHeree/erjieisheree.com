@@ -1,4 +1,4 @@
-  import { createClient } from '@/app/lib/supabase/server';
+import { createClient } from '@/app/lib/supabase/server';
 import { Grid, Typography, Link, Divider } from "@mui/material";
 
 async function getBlogPosts() {
