@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { decrypt } from '@/app/lib/auth/session'
+import { decrypt } from '@/app/_lib/auth/session'
  
 // 1. Specify protected and public routes
 const protectedRoutes = ['/admin']

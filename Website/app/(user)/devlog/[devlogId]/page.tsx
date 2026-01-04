@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 
-import { createClient } from '@lib/supabase/server';
+import { createClient } from '@/app/_lib/supabase/server';
 import Markdown from "@ui/Markdown";
 
 async function getPost(devlogId: string) {

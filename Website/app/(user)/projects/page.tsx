@@ -1,5 +1,5 @@
 import { Grid, Typography, Card, CardContent, Divider, CardActionArea } from "@mui/material";
-import { createClient } from '@lib/supabase/server';
+import { createClient } from '@/app/_lib/supabase/server';
 
 async function getProjects() {
   const supabase = await createClient();

@@ -1,22 +1,22 @@
 "use server";
 
-import { createClient } from "@lib/supabase/server";
+import { createClient } from "@/app/_lib/supabase/server";
 
-export async function createProjectPost(formData: FormData) {
+export async function createDevlogPost(formData: FormData) {
   const supabase = await createClient();
 
   const title = formData.get("title") as string;
   const subtitle = formData.get("subtitle") as string;
-  const link = formData.get("link") as string;
+  const content = formData.get("content") as string;
 
-  if (!title || !link) {
+  if (!title || !content) {
     throw new Error("Missing required fields");
   }
 
-  const { error } = await supabase.from("project").insert({
+  const { error } = await supabase.from("devlog").insert({
     title,
     subtitle,
-    link,
+    content,
   });
 
   if (error) {

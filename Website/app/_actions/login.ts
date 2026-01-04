@@ -1,8 +1,8 @@
 "use server";
 
 import { redirect } from "next/navigation";
-import { FormState } from "@/app/lib/auth/schema";
-import { createSession } from "../lib/auth/session";
+import { FormState } from "@/app/_lib/auth/schema";
+import { createSession } from "../_lib/auth/session";
 
 export async function Login(state: FormState, formData: FormData) {
   const email = formData.get("email") as string;
