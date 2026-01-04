@@ -3,8 +3,8 @@ import "../globals.css";
 import { Metadata } from "next";
 import { Grid } from "@mui/material";
 
-import Header from "@ui/Header";
-import Footer from "@ui/Footer";
+import Header from "@/app/component/Header";
+import Footer from "@/app/component/Footer";
 
 export const metadata: Metadata = {
   title: "Erjieisheree Place",

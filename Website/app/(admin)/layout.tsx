@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { Grid } from "@mui/material";
 
-import BackButton from "@ui/AdminBackButton";
+import BackButton from "@/app/component/AdminBackButton";
 
 export const metadata: Metadata = {
   title: "Erjieisheree Place",

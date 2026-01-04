@@ -1,6 +1,6 @@
 import { Grid, TextField, Button, Typography } from "@mui/material";
 
-import { createDevlogPost } from "@/app/_actions/createDevlogPost";
+import { createDevlogPost } from "@/app/actions/createDevlogPost";
 
 export default function page() {
   return (

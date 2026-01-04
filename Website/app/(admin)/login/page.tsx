@@ -2,7 +2,7 @@
 
 import { Grid, TextField, Button, Typography } from "@mui/material";
 
-import { Login } from "@/app/_actions/login";
+import { Login } from "@/app/actions/login";
 import { useActionState } from "react";
 
 const initialState = {

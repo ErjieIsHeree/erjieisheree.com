@@ -1,7 +1,7 @@
 import "./globals.css";
 
 import { Metadata } from "next";
-import Providers from "@ui/Providers";
+import Providers from "@/app/component/Providers";
 
 export const metadata: Metadata = {
   title: "Erjieisheree Place",

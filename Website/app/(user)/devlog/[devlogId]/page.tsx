@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 
-import { createClient } from '@/app/_lib/supabase/server';
-import Markdown from "@ui/Markdown";
+import { createClient } from '@/app/lib/supabase/server';
+import Markdown from "@/app/component/Markdown";
 
 async function getPost(devlogId: string) {
   const supabase = await createClient();
