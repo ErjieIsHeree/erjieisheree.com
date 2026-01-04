@@ -23,11 +23,18 @@ type Year = {
 function renderYear(year: Year, postYear: number) {
   year.year = postYear;
   return (
-    <Grid size={12} sx={{ pt: 3 }}>
+    <Grid size={12} sx={{ pt: 8 }}>
       <Typography variant="h2" color="text.primary">{year.year}</Typography>
       <Divider />
     </Grid>
   );
+}
+
+function getDayAndMonth(date: Date) {
+  const day = String(date.getDate()).padStart(2, '0');
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+
+  return `${day}/${month}`;
 }
 
 function renderPost(
@@ -50,9 +57,9 @@ function renderPost(
       }}
     >
       <Grid container size={12} justifyContent={"space-between"} alignItems={"center"}>
-        <Typography variant="h3" color="textPrimary" fontWeight={"bold"} fontSize={20}>{post.title}</Typography>
-        <Typography variant="subtitle2" color="textPrimary">{post.subtitle}</Typography>
-        <Typography variant="caption" color="textPrimary">{new Date(post.created_at).getDate()}/{new Date(post.created_at).getMonth()}</Typography>
+        <Typography variant="h3" color="textPrimary" fontWeight={"bold"} fontSize={24}>{post.title}</Typography>
+        <Typography variant="subtitle2" color="textPrimary" fontSize={13}>{post.subtitle}</Typography>
+        <Typography variant="caption" color="textSecondary">{getDayAndMonth(new Date(post.created_at))}</Typography>
       </Grid>
     </Link>
   );

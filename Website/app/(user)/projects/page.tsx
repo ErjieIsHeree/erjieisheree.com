@@ -29,11 +29,11 @@ function renderProject(project: {
         sx={{
           bgcolor: 'background.paper',
           p: 1,
-          "&:hover": { filter: 'brightness(0.8)' }
+          "&:hover": { filter: 'brightness(0.9)' }
         }}>
         <CardActionArea component={"a"} href={project.link} >
           <CardContent>
-            <Typography variant="caption" color="textPrimary">Last update: {new Date(project.updated_at).toLocaleDateString()}</Typography>
+            <Typography variant="caption" color="textSecondary">Last update: {new Date(project.updated_at).toLocaleDateString()}</Typography>
             <Typography variant="h3" color="textPrimary" fontSize={30} fontWeight={"bold"}>{project.title}</Typography>
             <Typography variant="subtitle1" color="textPrimary">{project.subtitle}</Typography>
           </CardContent>
@@ -60,6 +60,7 @@ export default async function Page() {
       <Grid container spacing={5} size={12}>
         {projectArray.map(renderProject)}
       </Grid>
+      <Grid size={12}><Divider /></Grid>
     </Grid>
   );
 }

@@ -17,7 +17,7 @@ export default function Logo({ logoHeight }: LogoProps) {
         position: "relative"
       }}
     >
-      <Image src="/img/new-logo.png" alt="logo" fill style={{ objectFit: "contain" }}/>
+      <Image title="8-bit sword" src="/img/new-logo.webp" alt="logo" fill style={{ objectFit: "contain" }}/>
     </Link>
   );
 }

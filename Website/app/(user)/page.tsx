@@ -111,6 +111,7 @@ export default function Page() {
                 width={1000}
                 height={1000}
                 style={{ gridArea: "stack" }}
+                title="brown circle"
               />
               <Image
                 src="/img/my-new-avatar.svg"
@@ -123,6 +124,7 @@ export default function Page() {
                   height: "auto",
                   borderRadius: "2em",
                 }}
+                title="A cute green dino"
               />
             </Box>
           </Grid>
@@ -145,8 +147,8 @@ export default function Page() {
               {renderCard({
                 title: "DevLog",
                 description:
-                  "On this section you can find all the posts of my proffesional trace.",
-                imageSrc: "/img/devlog.png",
+                  "On this section you can find all the posts of my proffessional trace.",
+                imageSrc: "/img/new-devlog.webp",
                 link: "/devlog",
                 altText: "devlog",
                 backgroundPosition: "center -170px",
@@ -157,7 +159,7 @@ export default function Page() {
                 title: "Projects",
                 description:
                   "In case you want to have a look at the my past wins.",
-                imageSrc: "/img/project.png",
+                imageSrc: "/img/new-project.webp",
                 link: "/projects",
                 altText: "projects",
               })}
@@ -167,7 +169,7 @@ export default function Page() {
                 title: "Blog",
                 description:
                   "Check-out this page to get a git pull of my life story-times!",
-                imageSrc: "/img/blog.png",
+                imageSrc: "/img/new-blog.webp",
                 link: "/blog",
                 altText: "blog",
                 backgroundPosition: "center -125px",

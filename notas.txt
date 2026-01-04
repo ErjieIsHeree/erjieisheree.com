@@ -1,11 +1,10 @@
 TODO:
 
 MAIN
--Actualizar interfaz (img, logo, estilos...)
--Lanzar la pagina web
+-Actualizar la pagina web del vercel
+-Crear PDF de la entrega final (lunes 5)
+-Crear PPT de la defensa del proyecto (jueves 8)
 
 Secondary
--Crear interfaz de administrador (crear/eliminar posts)
+-Actualizar interfaz (NextLinks)
 -Dark mode
--NextLinks (todos los componentes Link del proyecto usan el de MUI, no el de Next.)
--Añadir navegador por página

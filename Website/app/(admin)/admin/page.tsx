@@ -13,7 +13,7 @@ function MyButton(
       variant="outlined"
       sx={{ gap: 1, border: 2, borderColor: "#422F00", padding: 2 }}
     >
-      <Image src={iconSrc} alt={iconAlt} height={20} width={20} />
+      <Image src={iconSrc} alt={iconAlt} height={20} width={20} title={title}/>
       <Typography variant="h2" fontSize={20} color="textPrimary">
         {title}
       </Typography>

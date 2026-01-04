@@ -2,11 +2,18 @@
 
 import { Grid, TextField, Button, Typography } from "@mui/material";
 
-import { login } from "@/app/actions/auth";
+import { Login } from "@/app/actions/login";
 import { useActionState } from "react";
 
+const initialState = {
+  errors: {
+    email: undefined,
+    password: undefined
+  }
+};
+
 export default function Page() {
-  const [state, action, pending] = useActionState(login, undefined);
+  const [state, action] = useActionState(Login, initialState);
 
   return (
     <Grid
@@ -41,16 +48,24 @@ export default function Page() {
           justifyContent={"center"}
           width={"60vh"}
         >
-          <TextField name="email" label="Email" variant="outlined" fullWidth />
+          <TextField
+            name="email"
+            label="Email"
+            variant="outlined"
+            fullWidth
+            error={!!state.errors?.email}
+            helperText={state.errors?.email?.[0]}
+          />
           <TextField
             name="password"
             label="Password"
             variant="outlined"
             fullWidth
+            error={!!state.errors?.password}
+            helperText={state.errors?.password?.[0]}
           />
         </Grid>
         <Button
-          disabled={pending}
           type="submit"
           variant="contained"
           color="primary"

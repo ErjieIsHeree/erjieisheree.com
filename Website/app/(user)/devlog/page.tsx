@@ -30,6 +30,13 @@ function renderYear(year: Year, postYear: number) {
   );
 }
 
+function getDayAndMonth(date: Date) {
+  const day = String(date.getDate()).padStart(2, '0');
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+
+  return `${day}/${month}`;
+}
+
 function renderPost(
   post: {
     id: number;
@@ -46,13 +53,13 @@ function renderPost(
         bgcolor: 'background.paper',
         px: 2, py: 0.5,
         borderRadius: 2,
-        '&:hover': { filter: 'brightness(0.8)' }
+        '&:hover': { filter: 'brightness(0.9)' }
       }}
     >
       <Grid container size={12} justifyContent={"space-between"} alignItems={"center"}>
-        <Typography variant="h3" color="textPrimary" fontWeight={"bold"} fontSize={20}>{post.title}</Typography>
-        <Typography variant="subtitle2" color="textPrimary">{post.subtitle}</Typography>
-        <Typography variant="caption" color="textPrimary">{new Date(post.created_at).getDate()}/{new Date(post.created_at).getUTCMonth()}</Typography>
+        <Typography variant="h3" color="textPrimary" fontWeight={"bold"} fontSize={24}>{post.title}</Typography>
+        <Typography variant="subtitle2" color="textPrimary" fontSize={13}>{post.subtitle}</Typography>
+        <Typography variant="caption" color="textSecondary">{getDayAndMonth(new Date(post.created_at))}</Typography>
       </Grid>
     </Link>
   );

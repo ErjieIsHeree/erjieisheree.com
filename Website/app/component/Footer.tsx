@@ -5,7 +5,8 @@ function renderBrandButton(
   link: string,
   imgSrc: string,
   altText: string,
-  label: string
+  label: string,
+  title: string
 ) {
   return (
     <Button component="a" variant="outlined" href={link}
@@ -15,7 +16,7 @@ function renderBrandButton(
         borderRadius: 0.4
       }}
     >
-      <Image src={imgSrc} alt={altText} width={25} height={25}/>
+      <Image src={imgSrc} alt={altText} title={title} width={25} height={25}/>
       <Typography variant="button" fontWeight={"bold"}>{label}</Typography>
     </Button>
   );
@@ -38,43 +39,50 @@ export default function Footer() {
           "https://nextjs.org/",
           "/img/other-logo/next-js.svg",
           "nextjs logo",
-          "Next.js"
+          "Next.js",
+          "next.js"
         )}
         {renderBrandButton(
           "https://mui.com/",
-          "/img/other-logo/mui.png",
+          "/img/other-logo/new-mui.webp",
           "mui logo",
-          "Material UI"
+          "Material UI",
+          "material ui"
         )}
         {renderBrandButton(
           "https://www.supabase.com/",
-          "/img/other-logo/supabase.png",
+          "/img/other-logo/new-supabase.webp",
           "supabase logo",
-          "Supabase"
+          "Supabase",
+          "supabase"
         )}
         {renderBrandButton(
           "https://www.typescriptlang.org/",
-          "/img/other-logo/typescript.png",
+          "/img/other-logo/new-typescript.webp",
           "typescript logo",
-          "TypeScript"
+          "TypeScript",
+          "typescript"
         )}
         {renderBrandButton(
           "https://react.dev/",
-          "/img/other-logo/react.png",
+          "/img/other-logo/new-react.webp",
           "react logo",
-          "React"
+          "React",
+          "react"
         )}
         {renderBrandButton(
           "https://nodejs.org/",
           "/img/other-logo/nodejs.svg",
           "nodejs logo",
-          "Node.js"
+          "Node.js",
+          "node.js"
         )}
         {renderBrandButton(
           "https://vercel.com/",
           "/img/other-logo/vercel.svg",
           "vercel logo",
-          "Vercel"
+          "Vercel",
+          "vercel"
         )}
       </Grid>
       <Typography variant="caption" color="text.primary" align={"center"}>
